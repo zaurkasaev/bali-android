@@ -11,10 +11,11 @@ import android.view.ViewGroup;
 import com.android.bali.R;
 
 /**
- * Created by zaur_ on 13-Nov-17.
+ * Created by zaur_ on 14-Nov-17.
  */
 
-public class BaliFragment extends Fragment {
+public class WeatherFragment extends Fragment {
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,7 @@ public class BaliFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_bali, container, false);
+        View view = inflater.inflate(R.layout.fragment_weather, container, false);
         return view;    }
 
     @Override
