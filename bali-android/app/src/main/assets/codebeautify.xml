@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<data>
+	<categories>
+		<category>
+			<catid>3</catid>
+			<name>Где покушать?</name>
+			<buttonText>Найти отель - на Бали</buttonText>
+			<buttonURL>http://jmp1.ru/20679/Bali-eda/source/campaign-ads/</buttonURL>
+			<image>http://bali.new127.ru/wp-content/uploads/2016/10/25255BUNSET25255D-5-2.jpg</image>
+			<posts>
+				<post>
+					<id>1354</id>
+					<title>Где поесть в Убуде</title>
+					<url>http://bali.new127.ru/?p=1354</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/NeE1-0GvpeRnb-bgSgWZGM33szoJCgFJfDIJBCIKzMs-1.jpg</image>
+				</post>
+				<post>
+					<id>1338</id>
+					<title>Где недорого поесть в Куте и Семиньяке</title>
+					<url>http://bali.new127.ru/?p=1338</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/73936527_r68w2umJ5EpoCJLP1D-S2oKB9KUqd8gdq1tXw6q5GVo-1.jpg</image>
+				</post>
+				<post>
+					<id>1324</id>
+					<title>Рыбные рестораны в Джимбаране</title>
+					<url>http://bali.new127.ru/?p=1324</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-e1gbn.png</image>
+				</post>
+				<post>
+					<id>1305</id>
+					<title>Рестораны и кафе на Бали</title>
+					<url>http://bali.new127.ru/?p=1305</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-4caot.png</image>
+				</post>
+				<post>
+					<id>1292</id>
+					<title>Фрукты Бали</title>
+					<url>http://bali.new127.ru/?p=1292</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-k22ch.png</image>
+				</post>
+				<post>
+					<id>1285</id>
+					<title>Самое вкусное мороженое на Бали</title>
+					<url>http://bali.new127.ru/?p=1285</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/gusto-bali-sladkoe-275x196.jpg</image>
+				</post>
+				<post>
+					<id>1273</id>
+					<title>Еда на Бали: вкусный обзор со всеми подробностями</title>
+					<url>http://bali.new127.ru/?p=1273</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-dlcl4.png</image>
+				</post>
+				<post>
+					<id>1258</id>
+					<title>Пять интересных ресторанов</title>
+					<url>http://bali.new127.ru/?p=1258</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/мотел-мексикола21-290x290.jpg</image>
+				</post>
+				<post>
+					<id>1241</id>
+					<title>Поесть вкусно и недорого</title>
+					<url>http://bali.new127.ru/?p=1241</url>
+					<image></image>
+				</post>
+				<post>
+					<id>1035</id>
+					<title>Джимбаран – самый знаменитый рыбный рынок на Бали</title>
+					<url>http://bali.new127.ru/?p=1035</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-t8nw3.png</image>
+				</post>
+			</posts>
+		</category>
+		<category>
+			<catid>6</catid>
+			<name>Интересные места</name>
+			<buttonText>Найти отель - на Бали</buttonText>
+			<buttonURL>http://jmp1.ru/20679/Bali-interes/source/campaign-ads/</buttonURL>
+			<image>https://trello-attachments.s3.amazonaws.com/5985df0b73fb6e4b96d39f1c/59e21c73bfcb78fd93b00541/86a839422ba5ce326db155f6cceffda2/4.png</image>
+			<posts>
+				<post>
+					<id>1186</id>
+					<title>Королевские гробницы Гунунг Кави</title>
+					<url>http://bali.new127.ru/?p=1186</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-rxd3y.png</image>
+				</post>
+				<post>
+					<id>1235</id>
+					<title>Гоа Лавах – пещера летучих мышей</title>
+					<url>http://bali.new127.ru/?p=1235</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-dmlkh.png</image>
+				</post>
+				<post>
+					<id>1197</id>
+					<title>Эйр Панас Банджар и Боробудур на Бали</title>
+					<url>http://bali.new127.ru/?p=1197</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-fvegd.png</image>
+				</post>
+				<post>
+					<id>1192</id>
+					<title>Священные источники Тирта Эмпул</title>
+					<url>http://bali.new127.ru/?p=1192</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-g1o91.png</image>
+				</post>
+				<post>
+					<id>1175</id>
+					<title>Слоновья пещера Гоа Гаджа</title>
+					<url>http://bali.new127.ru/?p=1175</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-ramwr.png</image>
+				</post>
+				<post>
+					<id>1140</id>
+					<title>Аквапарк Waterbom</title>
+					<url>http://bali.new127.ru/?p=1140</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-jw4pq.png</image>
+				</post>
+				<post>
+					<id>1104</id>
+					<title>Парк птиц на Бали или интересные факты из жизни пернатых</title>
+					<url>http://bali.new127.ru/?p=1104</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-vgwoc.png</image>
+				</post>
+				<post>
+					<id>1070</id>
+					<title>Парк слонов на Бали</title>
+					<url>http://bali.new127.ru/?p=1070</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-i12k9.png</image>
+				</post>
+				<post>
+					<id>1035</id>
+					<title>Джимбаран – самый знаменитый рыбный рынок на Бали</title>
+					<url>http://bali.new127.ru/?p=1035</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-t8nw3.png</image>
+				</post>
+				<post>
+					<id>977</id>
+					<title>Пура Танах Лот – храм на скале или культурный символ Индонезии</title>
+					<url>http://bali.new127.ru/?p=977</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-cr446.png</image>
+				</post>
+				<post>
+					<id>922</id>
+					<title>Шоколадная фабрика на Бали «Чарли»</title>
+					<url>http://bali.new127.ru/?p=922</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-fuw1t.png</image>
+				</post>
+				<post>
+					<id>889</id>
+					<title>Девдан шоу (Devdan show) – постановка бродвейского уровня на Бали</title>
+					<url>http://bali.new127.ru/?p=889</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-a6qy9.png</image>
+				</post>
+			</posts>
+		</category>
+		<category>
+			<catid>7</catid>
+			<name>Лучшие пляжи Бали</name>
+			<buttonText>Найти отель - на Бали</buttonText>
+			<buttonURL>http://jmp1.ru/20679/Bali-plyaz/source/campaign-ads/</buttonURL>
+			<image>http://bali.new127.ru/wp-content/uploads/2016/10/25255BUNSET25255D-5-2.jpg</image>
+			<posts>
+				<post>
+					<id>888</id>
+					<title>Соседние острова: Остров Нуса Пенида. Nusa Penida</title>
+					<url>http://bali.new127.ru/?p=888</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-3feng.png</image>
+				</post>
+				<post>
+					<id>873</id>
+					<title>Соседние острова: Остров Нуса Лембонган. Nusa Lembongan</title>
+					<url>http://bali.new127.ru/?p=873</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-p28yh.png</image>
+				</post>
+				<post>
+					<id>887</id>
+					<title>Соседние острова: Остров Ломбок. Lombok</title>
+					<url>http://bali.new127.ru/?p=887</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-qi6df.png</image>
+				</post>
+				<post>
+					<id>874</id>
+					<title>Соседние острова: Гили Мено. Meno</title>
+					<url>http://bali.new127.ru/?p=874</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-txxll.png</image>
+				</post>
+				<post>
+					<id>809</id>
+					<title>Соседние острова: Гили Эйр. Gili Air</title>
+					<url>http://bali.new127.ru/?p=809</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-ed7i7.png</image>
+				</post>
+				<post>
+					<id>872</id>
+					<title>Соседние острова: Гили Траванган. Trawangan</title>
+					<url>http://bali.new127.ru/?p=872</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-w2g3x.png</image>
+				</post>
+				<post>
+					<id>862</id>
+					<title>Полуостров Букит: Пляж Бингин. Bingin beach</title>
+					<url>http://bali.new127.ru/?p=862</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-vivzu.png</image>
+				</post>
+				<post>
+					<id>808</id>
+					<title>Полуостров Букит: Пляж Ньянг Ньянг. Nyang Nyang beach</title>
+					<url>http://bali.new127.ru/?p=808</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-kl9vq.png</image>
+				</post>
+				<post>
+					<id>807</id>
+					<title>Полуостров Букит: Пляж Пандава. Pandawa beach</title>
+					<url>http://bali.new127.ru/?p=807</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-nf0l9.png</image>
+				</post>
+				<post>
+					<id>806</id>
+					<title>Полуостров Букит: Пляж Танджунг Беноа. Tanjung Benoa beach</title>
+					<url>http://bali.new127.ru/?p=806</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-t5xj4.png</image>
+				</post>
+				<post>
+					<id>805</id>
+					<title>Полуостров Букит: Пляж Никко. Nikko beach</title>
+					<url>http://bali.new127.ru/?p=805</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-zcr3n.png</image>
+				</post>
+				<post>
+					<id>734</id>
+					<title>Полуостров Букит:Пляж Гегер. Geger beach</title>
+					<url>http://bali.new127.ru/?p=734</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-mjjt3.png</image>
+				</post>
+				<post>
+					<id>793</id>
+					<title>Полуостров Букит: Пляж Нуса-Дуа. Nusa Dua beach</title>
+					<url>http://bali.new127.ru/?p=793</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-ztnn8.png</image>
+				</post>
+				<post>
+					<id>782</id>
+					<title>Полуостров Букит: Пляж Джимбаран. Jimbaran beach</title>
+					<url>http://bali.new127.ru/?p=782</url>
+					<image></image>
+				</post>
+				<post>
+					<id>773</id>
+					<title>Полуостров Букит:Пляж Дримлэнд. Dreamland beach</title>
+					<url>http://bali.new127.ru/?p=773</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-jpe6r.png</image>
+				</post>
+				<post>
+					<id>733</id>
+					<title>Полуостров Бутит: Пляж Баланган. Balangan beach</title>
+					<url>http://bali.new127.ru/?p=733</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-zxifg.png</image>
+				</post>
+				<post>
+					<id>732</id>
+					<title>Полуостров Бутит: Пляж Паданг-Паданг. Padang Padang beach</title>
+					<url>http://bali.new127.ru/?p=732</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-s4cof.png</image>
+				</post>
+				<post>
+					<id>731</id>
+					<title>Полуостров Букит: Пляж Улувату. Suluban beach – Blue point beach</title>
+					<url>http://bali.new127.ru/?p=731</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/25255BUNSET25255D-416-1.jpg</image>
+				</post>
+				<post>
+					<id>708</id>
+					<title>Северное побережье: Пляж Ловина. Lovina beach</title>
+					<url>http://bali.new127.ru/?p=708</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/25255BUNSET25255D-503-1.jpg</image>
+				</post>
+				<post>
+					<id>707</id>
+					<title>Восточное побережье: Пляж Амед-Бунутан. Pondok Vienna beach/Lipah beach</title>
+					<url>http://bali.new127.ru/?p=707</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-vdsow.png</image>
+				</post>
+				<post>
+					<id>706</id>
+					<title>Восточное побережье: Пляж Туламбен. Tulamben beach</title>
+					<url>http://bali.new127.ru/?p=706</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/Untitled-1-1-1.jpg</image>
+				</post>
+				<post>
+					<id>676</id>
+					<title>Восточное побережье: Пляж Амед. Amed beach</title>
+					<url>http://bali.new127.ru/?p=676</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-q3i4d.png</image>
+				</post>
+				<post>
+					<id>675</id>
+					<title>Восточное побережье: Пляж Уайт Сэнд Бич. White Sand beach</title>
+					<url>http://bali.new127.ru/?p=675</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-rwvye.png</image>
+				</post>
+				<post>
+					<id>674</id>
+					<title>Юго-восточное побережье: Пляж Голубая Лагуна. Blue Lagoon beach</title>
+					<url>http://bali.new127.ru/?p=674</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/25255BUNSET25255D-476-1.jpg</image>
+				</post>
+				<post>
+					<id>656</id>
+					<title>Юго-восточное побережье: Пляж Паланг-Бай. Padang Bay beach</title>
+					<url>http://bali.new127.ru/?p=656</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-2xx52.png</image>
+				</post>
+				<post>
+					<id>655</id>
+					<title>Юго-восточное побережье: Пляж Чандидаса. Candidasa beach</title>
+					<url>http://bali.new127.ru/?p=655</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-d5lfu.png</image>
+				</post>
+				<post>
+					<id>649</id>
+					<title>Юго-восточное побережье: Пляж Санур. Sanur beach</title>
+					<url>http://bali.new127.ru/?p=649</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-7vymv.png</image>
+				</post>
+				<post>
+					<id>641</id>
+					<title>Юго-западное побережье: Пляж Эхо. Echo Beach</title>
+					<url>http://bali.new127.ru/?p=641</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-jy8id.png</image>
+				</post>
+				<post>
+					<id>630</id>
+					<title>Юго-западное побережье: Пляж Чангу. Changgu beach</title>
+					<url>http://bali.new127.ru/?p=630</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-dhtor.png</image>
+				</post>
+				<post>
+					<id>618</id>
+					<title>Юго-западное побережье: Пляж Семиньяк. Seminyak beach</title>
+					<url>http://bali.new127.ru/?p=618</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-v2bf0.png</image>
+				</post>
+				<post>
+					<id>604</id>
+					<title>Юго-западное побережье: Пляж Легиан. Legian beach</title>
+					<url>http://bali.new127.ru/?p=604</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/25255BUNSET25255D-352.jpg</image>
+				</post>
+				<post>
+					<id>593</id>
+					<title>Юго-западное побережье: Пляж Кута.  Kuta beach</title>
+					<url>http://bali.new127.ru/?p=593</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-3e4y3.png</image>
+				</post>
+			</posts>
+		</category>
+		<category>
+			<catid>5</catid>
+			<name>Полезные советы</name>
+			<buttonText>Найти отель - на Бали</buttonText>
+			<buttonURL>http://jmp1.ru/20679/Bali-Poles/source/campaign-ads/</buttonURL>
+			<posts>
+				<post>
+					<id>1450</id>
+					<title>Виза на Бали</title>
+					<url>http://bali.new127.ru/?p=1450</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/46868684.jpg</image>
+				</post>
+				<post>
+					<id>1438</id>
+					<title>Важно знать перед поездкой на Бали</title>
+					<url>http://bali.new127.ru/?p=1438</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/screen-2016-mmf2x.png</image>
+				</post>
+				<post>
+					<id>1443</id>
+					<title>Памятка туристам по Бали</title>
+					<url>http://bali.new127.ru/?p=1443</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/Sea_Suitcase_Hat_448893-1-e1478650195124.jpg</image>
+				</post>
+				<post>
+					<id>1430</id>
+					<title>Правила безопасности в океане, течения</title>
+					<url>http://bali.new127.ru/?p=1430</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/red7qnKV.png</image>
+				</post>
+				<post>
+					<id>1416</id>
+					<title>Серф школы на Бали</title>
+					<url>http://bali.new127.ru/?p=1416</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/Горячая-распродажа-мягкая-доска-для-серфинга-серфинг-доски-для-серфинга.jpg_640x640.jpg</image>
+				</post>
+				<post>
+					<id>1409</id>
+					<title>Мобильный интернет на Бали</title>
+					<url>http://bali.new127.ru/?p=1409</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/3258d011aae42e19ebe251d40cd7d4cb.png</image>
+				</post>
+				<post>
+					<id>1400</id>
+					<title>Телефонные коды у сотовых операторов на Бали</title>
+					<url>http://bali.new127.ru/?p=1400</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/screen-2016-j1urs.png</image>
+				</post>
+				<post>
+					<id>1397</id>
+					<title>Как общаться со страховыми при наступления страхового случая</title>
+					<url>http://bali.new127.ru/?p=1397</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/screen-2016-g7maj.png</image>
+				</post>
+			</posts>
+		</category>
+		<category>
+			<catid>8</catid>
+			<name>Развлечения</name>
+			<buttonText>Найти отель - на Бали</buttonText>
+			<buttonURL>http://jmp1.ru/20679/Bali-Razvl/source/campaign-ads/</buttonURL>
+			<posts>
+				<post>
+					<id>1140</id>
+					<title>Аквапарк Waterbom</title>
+					<url>http://bali.new127.ru/?p=1140</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-jw4pq.png</image>
+				</post>
+				<post>
+					<id>1099</id>
+					<title>Таман Нуса – парк культуры и традиций Индонезии</title>
+					<url>http://bali.new127.ru/?p=1099</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-sn6p0.png</image>
+				</post>
+				<post>
+					<id>979</id>
+					<title>Танцы Кечак, Легонг и Баронг</title>
+					<url>http://bali.new127.ru/?p=979</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-rnru2.png</image>
+				</post>
+				<post>
+					<id>1098</id>
+					<title>Серфинг на Бали</title>
+					<url>http://bali.new127.ru/?p=1098</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-514av.png</image>
+				</post>
+				<post>
+					<id>1094</id>
+					<title>Дельфины на рассвете</title>
+					<url>http://bali.new127.ru/?p=1094</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-lnr6e.png</image>
+				</post>
+				<post>
+					<id>1089</id>
+					<title>Рафтинг</title>
+					<url>http://bali.new127.ru/?p=1089</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-wg5qu.png</image>
+				</post>
+				<post>
+					<id>1085</id>
+					<title>Дайвинг и сноркелинг в Туламбене и Менджангане</title>
+					<url>http://bali.new127.ru/?p=1085</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-0yof1.png</image>
+				</post>
+				<post>
+					<id>1080</id>
+					<title>Seawalker – прогулки под водой</title>
+					<url>http://bali.new127.ru/?p=1080</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-z7pgv.png</image>
+				</post>
+				<post>
+					<id>1075</id>
+					<title>Водные развлечения в Танджунг Беноа</title>
+					<url>http://bali.new127.ru/?p=1075</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-rty40.png</image>
+				</post>
+				<post>
+					<id>1070</id>
+					<title>Парк слонов на Бали</title>
+					<url>http://bali.new127.ru/?p=1070</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-i12k9.png</image>
+				</post>
+			</posts>
+		</category>
+		<category>
+			<catid>4</catid>
+			<name>Шоппинг</name>
+			<buttonText>Найти отель - на Бали</buttonText>
+			<buttonURL>http://jmp1.ru/20679/Bali-shop/source/campaign-ads/</buttonURL>
+			<posts>
+				<post>
+					<id>1544</id>
+					<title>Angelo Store</title>
+					<url>http://bali.new127.ru/?p=1544</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/img_5927-1.jpg</image>
+				</post>
+				<post>
+					<id>1512</id>
+					<title>Натуральная косметика ручной работы Utama Spice</title>
+					<url>http://bali.new127.ru/?p=1512</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/screen-2016-7k70c.png</image>
+				</post>
+				<post>
+					<id>1461</id>
+					<title>Что привезти с Бали</title>
+					<url>http://bali.new127.ru/?p=1461</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/11/screen-2016-1jxi5.png</image>
+				</post>
+				<post>
+					<id>1387</id>
+					<title>Магазины и шопинг на Бали</title>
+					<url>http://bali.new127.ru/?p=1387</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/screen-2016-dzb1n.png</image>
+				</post>
+				<post>
+					<id>1375</id>
+					<title>Крупнейшие торговые центры и магазины на Бали</title>
+					<url>http://bali.new127.ru/?p=1375</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/1-80vIkC5-1.jpg</image>
+				</post>
+				<post>
+					<id>1368</id>
+					<title>Шоппинг на Бали: возьмите экзотику с собой!</title>
+					<url>http://bali.new127.ru/?p=1368</url>
+					<image>http://bali.new127.ru/wp-content/uploads/2016/10/96fb3a17d318acea891269636a7b2f42.jpg</image>
+				</post>
+			</posts>
+		</category>
+	</categories>
+	<tickets>
+		<catid>9</catid>
+		<name>tickets</name>
+		<posts>
+			<post>
+				<id>1563</id>
+				<title>Ticket 2</title>
+				<url>http://bali.new127.ru/?p=1563</url>
+				<image>http://bali.new127.ru/wp-content/uploads/2016/11/IMG_4334.jpg</image>
+			</post>
+			<post>
+				<id>1561</id>
+				<title>Ticket Record</title>
+				<url>http://bali.new127.ru/?p=1561</url>
+				<image>http://bali.new127.ru/wp-content/uploads/2016/11/img_5927-1.jpg</image>
+			</post>
+		</posts>
+	</tickets>
+	<mainURL>http://bali.new127.ru/?page_id=20</mainURL>
+	<buttonText>Главная кнопка</buttonText>
+	<buttonURL>http://mail.ru</buttonURL>
+</data>

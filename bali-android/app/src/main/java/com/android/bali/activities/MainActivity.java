@@ -81,10 +81,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         hideFragment(0);
-
         hideFragment(1);
         hideFragment(2);
-        hideFragment(3);
         showFragment(previous);
     }
     void initFragments(){
