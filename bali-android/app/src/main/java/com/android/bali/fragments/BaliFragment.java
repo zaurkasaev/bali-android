@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.bali.App;
 import com.android.bali.R;
@@ -24,7 +26,7 @@ public class BaliFragment extends Fragment {
 
     private ListView listView;
     private CategoriesAdapter adapter;
-    private ArrayList<Category> categories;
+    ArrayList<Category> categories;
     App app;
 
     @Nullable
@@ -34,9 +36,15 @@ public class BaliFragment extends Fragment {
 
         listView = view.findViewById(R.id.bali_list_items);
         app = (App) getContext().getApplicationContext();
-        categories=app.getxStreamHelper().getCategories();
-        adapter = new CategoriesAdapter(this.getContext(), R.layout.categories_view, categories);
+        categories = app.getxStreamHelper().getCategories();
+        adapter = new CategoriesAdapter(this.getContext(), categories);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getContext(), "click", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return view;
     }
@@ -49,5 +57,11 @@ public class BaliFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.notifyDataSetChanged();
     }
 }

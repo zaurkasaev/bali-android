@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +15,7 @@ import com.android.bali.App;
 import com.android.bali.R;
 import com.android.bali.models.Category;
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -22,17 +23,27 @@ import java.util.ArrayList;
  * Created by zaur_ on 17.11.2017.
  */
 
-public class CategoriesAdapter extends ArrayAdapter<Category> {
+public class CategoriesAdapter extends BaseAdapter/*ArrayAdapter<Category> */{
 
-    ArrayList<Category> categories;
-    Context context;
-    App app;
+    private ArrayList<Category> categories;
+    private Context context;
+    private App app;
+    private Picasso picasso;
 
-    public CategoriesAdapter(@NonNull Context context, int resource, ArrayList<Category> categories) {
-        super(context, resource);
-        this.categories = categories;
+    public CategoriesAdapter(Context context, /*int resource,*/ ArrayList<Category> objects) {
+        //super(context, resource);
+        categories = objects;
         this.context = context;
-        this.app = (App) context.getApplicationContext();
+        app = (App) context.getApplicationContext();
+//        picasso = new Picasso.Builder(context)
+//                .listener(new Picasso.Listener() {
+//                    @Override
+//                    public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
+//                        //Here your log
+//                        Log.d("Picasso", exception.getLocalizedMessage());
+//                    }
+//                })
+//                .build();
     }
 
     private class CategoriesViewHolder {
@@ -48,7 +59,7 @@ public class CategoriesAdapter extends ArrayAdapter<Category> {
         void SetData(final Category category) {
             Glide.with(context)
                     .load(category.getImage())
-                    .error(R.mipmap.ic_launcher)
+                    .error(R.drawable.bali_image)
                     .fitCenter()
                     .into(catImage);
             catText.setText(category.getName());
@@ -57,18 +68,34 @@ public class CategoriesAdapter extends ArrayAdapter<Category> {
 
     }
 
+    @Override
+    public int getCount() {
+        return categories.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return categories.get(i);
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         final CategoriesViewHolder holder;
         try {
-            Category category = getItem(position);
+            Category category = (Category) getItem(position);
             if (convertView == null) {
                 convertView = LayoutInflater.from(context).inflate(R.layout.categories_view, parent, false);
                 holder = new CategoriesViewHolder(convertView);
                 convertView.setTag(holder);
             } else
                 holder = (CategoriesViewHolder) convertView.getTag();
+
             holder.SetData(category);
 
             Log.i("getView", String.valueOf(position));

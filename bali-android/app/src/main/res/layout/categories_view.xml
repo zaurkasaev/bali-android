@@ -6,7 +6,8 @@
     <ImageView
         android:id="@+id/categories_image"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="250dp"
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/categories_text"
@@ -16,7 +17,8 @@
         android:layout_marginBottom="5dp"
         android:layout_marginRight="10dp"
         android:text="Shopping"
+        android:textColor="@color/colorPrimary"
         android:textSize="22dp"
-        android:textStyle="bold" />
+        android:textStyle="italic" />
 
 </FrameLayout>

@@ -30,4 +30,5 @@ dependencies {
         exclude group: 'xmlpull', module: 'xmlpull'
     }
     compile 'jp.wasabeef:glide-transformations:2.0.2'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
