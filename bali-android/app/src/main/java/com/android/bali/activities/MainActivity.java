@@ -12,6 +12,7 @@ import com.android.bali.App;
 import com.android.bali.R;
 import com.android.bali.fragments.BaliFragment;
 import com.android.bali.fragments.ConverterFragment;
+import com.android.bali.fragments.TicketsFragment;
 import com.android.bali.fragments.WeatherFragment;
 import com.android.bali.models.Category;
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());
+        tabLayout.addTab(tabLayout.newTab());
 
         addIcons();
         initFragments();
@@ -61,10 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
                     case 1:
+                        getSupportActionBar().setTitle("Tickets");
+                        break;
+                    case 2:
 //                        menu.clear();
                         getSupportActionBar().setTitle("Whether");
                         break;
-                    case 2:
+                    case 3:
 //                        menu.clear();
                         getSupportActionBar().setTitle("Converter");
                         break;
@@ -95,12 +100,14 @@ public class MainActivity extends AppCompatActivity {
         hideFragment(0);
         hideFragment(1);
         hideFragment(2);
+        hideFragment(3);
         showFragment(previous);
     }
 
     void initFragments() {
 
         BaliFragment baliFragment = new BaliFragment();
+        TicketsFragment ticketsFragment = new TicketsFragment();
         WeatherFragment weatherFragment = new WeatherFragment();
         ConverterFragment converterFragment = new ConverterFragment();
 
@@ -108,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = manager.beginTransaction();
 
         transaction.add(R.id.container, baliFragment, "fragBali");
+        transaction.add(R.id.container, ticketsFragment, "fragTickets");
         transaction.add(R.id.container, weatherFragment, "fragWeather");
         transaction.add(R.id.container, converterFragment, "fragConverter");
         transaction.commit();
@@ -115,8 +123,9 @@ public class MainActivity extends AppCompatActivity {
 
     void addIcons() {
         tabLayout.getTabAt(0).setIcon(R.drawable.plaane);
-        tabLayout.getTabAt(1).setIcon(R.drawable.sun);
-        tabLayout.getTabAt(2).setIcon(R.drawable.transaction);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ticket);
+        tabLayout.getTabAt(2).setIcon(R.drawable.sun);
+        tabLayout.getTabAt(3).setIcon(R.drawable.transaction);
     }
 
     void hideFragment(int position) {
@@ -127,14 +136,20 @@ public class MainActivity extends AppCompatActivity {
                         .hide(baliFragment)
                         .commit();
                 break;
-
             case 1:
+                TicketsFragment ticketsFragment = (TicketsFragment) manager.findFragmentByTag("fragTickets");
+                manager.beginTransaction()
+                        .hide(ticketsFragment)
+                        .commit();
+                break;
+
+            case 2:
                 WeatherFragment weatherFragment = (WeatherFragment) manager.findFragmentByTag("fragWeather");
                 manager.beginTransaction()
                         .hide(weatherFragment)
                         .commit();
                 break;
-            case 2:
+            case 3:
                 ConverterFragment converterFragment = (ConverterFragment) manager.findFragmentByTag("fragConverter");
                 manager.beginTransaction()
                         .hide(converterFragment)
@@ -151,14 +166,20 @@ public class MainActivity extends AppCompatActivity {
                         .show(baliFragment)
                         .commit();
                 break;
-
             case 1:
+                TicketsFragment ticketsFragment = (TicketsFragment) manager.findFragmentByTag("fragTickets");
+                manager.beginTransaction()
+                        .show(ticketsFragment)
+                        .commit();
+                break;
+
+            case 2:
                 WeatherFragment weatherFragment = (WeatherFragment) manager.findFragmentByTag("fragWeather");
                 manager.beginTransaction()
                         .show(weatherFragment)
                         .commit();
                 break;
-            case 2:
+            case 3:
                 ConverterFragment converterFragment = (ConverterFragment) manager.findFragmentByTag("fragConverter");
                 manager.beginTransaction()
                         .show(converterFragment)
