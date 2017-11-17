@@ -11,39 +11,32 @@ public class Tickets {
 
     private String catid;
 
-    public String getName ()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName (String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Posts getPosts ()
-    {
+    public Posts getPosts() {
         return posts;
     }
 
-    public void setPosts (Posts posts)
-    {
+    public void setPosts(Posts posts) {
         this.posts = posts;
     }
 
-    public String getCatid ()
-    {
+    public String getCatid() {
         return catid;
     }
 
-    public void setCatid (String catid)
-    {
+    public void setCatid(String catid) {
         this.catid = catid;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [name = "+name+", posts = "+posts+", catid = "+catid+"]";
+    public String toString() {
+        return "ClassTickets [name = " + name + ", posts = " + posts + ", catid = " + catid + "]";
     }
 }

@@ -17,69 +17,56 @@ public class Category {
 
     private String buttonText;
 
-    public String getButtonURL ()
-    {
+    public String getButtonURL() {
         return buttonURL;
     }
 
-    public void setButtonURL (String buttonURL)
-    {
+    public void setButtonURL(String buttonURL) {
         this.buttonURL = buttonURL;
     }
 
-    public String getName ()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName (String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public Posts getPosts ()
-    {
+    public Posts getPosts() {
         return posts;
     }
 
-    public void setPosts (Posts posts)
-    {
+    public void setPosts(Posts posts) {
         this.posts = posts;
     }
 
-    public String getImage ()
-    {
+    public String getImage() {
         return image;
     }
 
-    public void setImage (String image)
-    {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public String getCatid ()
-    {
+    public String getCatid() {
         return catid;
     }
 
-    public void setCatid (String catid)
-    {
+    public void setCatid(String catid) {
         this.catid = catid;
     }
 
-    public String getButtonText ()
-    {
+    public String getButtonText() {
         return buttonText;
     }
 
-    public void setButtonText (String buttonText)
-    {
+    public void setButtonText(String buttonText) {
         this.buttonText = buttonText;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [buttonURL = "+buttonURL+", name = "+name+", posts = "+posts+", image = "+image+", catid = "+catid+", buttonText = "+buttonText+"]";
+    public String toString() {
+        return "Class [buttonURL = " + buttonURL + ", name = " + name + ", posts = " + posts + ", image = " + image + ", catid = " + catid + ", buttonText = " + buttonText + "]";
     }
 }

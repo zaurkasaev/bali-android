@@ -1,18 +1,20 @@
 package com.android.bali.models;
 
+import java.util.List;
+
 /**
  * Created by zaur_ on 14-Nov-17.
  */
 
 public class Categories {
-    private Category[] category;
+    private List<Category> category;
 
-    public Category[] getCategory ()
+    public List<Category> getCategory ()
     {
         return category;
     }
 
-    public void setCategory (Category[] category)
+    public void setCategory (List<Category> category)
     {
         this.category = category;
     }
@@ -20,6 +22,6 @@ public class Categories {
     @Override
     public String toString()
     {
-        return "ClassPojo [category = "+category+"]";
+        return "ClassCategories [category = "+category+"]";
     }
 }

@@ -13,49 +13,40 @@ public class Post {
 
     private String url;
 
-    public String getId ()
-    {
+    public String getId() {
         return id;
     }
 
-    public void setId (String id)
-    {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getTitle ()
-    {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle (String title)
-    {
+    public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getImage ()
-    {
+    public String getImage() {
         return image;
     }
 
-    public void setImage (String image)
-    {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public String getUrl ()
-    {
+    public String getUrl() {
         return url;
     }
 
-    public void setUrl (String url)
-    {
+    public void setUrl(String url) {
         this.url = url;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [id = "+id+", title = "+title+", image = "+image+", url = "+url+"]";
+    public String toString() {
+        return "ClassPost [id = " + id + ", title = " + title + ", image = " + image + ", url = " + url + "]";
     }
 }

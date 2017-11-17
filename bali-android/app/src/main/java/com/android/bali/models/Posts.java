@@ -1,25 +1,24 @@
 package com.android.bali.models;
 
+import java.util.List;
+
 /**
  * Created by zaur_ on 14-Nov-17.
  */
 
 public class Posts {
-    private Post[] post;
+    private List<Post> post;
 
-    public Post[] getPost ()
-    {
+    public List<Post> getPost() {
         return post;
     }
 
-    public void setPost (Post[] post)
-    {
+    public void setPost(List<Post> post) {
         this.post = post;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [post = "+post+"]";
+    public String toString() {
+        return "ClassPosts [post = " + post + "]";
     }
 }

@@ -1,17 +1,21 @@
 package com.android.bali.activities;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.android.bali.App;
 import com.android.bali.R;
 import com.android.bali.fragments.BaliFragment;
 import com.android.bali.fragments.ConverterFragment;
 import com.android.bali.fragments.WeatherFragment;
+import com.android.bali.models.Category;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,12 +24,20 @@ public class MainActivity extends AppCompatActivity {
     Menu menu;
     int previous = 0;
 
+    ArrayList<Category> categories;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Bali");
         tabLayout = findViewById(R.id.tabLayout);
+        categories = new ArrayList<>();
+
+        App app = (App) getApplicationContext();
+
+        app.getxStreamHelper().getData();
+
 
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());
@@ -85,11 +97,12 @@ public class MainActivity extends AppCompatActivity {
         hideFragment(2);
         showFragment(previous);
     }
-    void initFragments(){
+
+    void initFragments() {
 
         BaliFragment baliFragment = new BaliFragment();
-        WeatherFragment weatherFragment=new WeatherFragment();
-        ConverterFragment converterFragment=new ConverterFragment();
+        WeatherFragment weatherFragment = new WeatherFragment();
+        ConverterFragment converterFragment = new ConverterFragment();
 
         manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
