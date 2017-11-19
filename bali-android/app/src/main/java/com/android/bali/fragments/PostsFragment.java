@@ -1,9 +1,9 @@
 package com.android.bali.fragments;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,21 +13,15 @@ import android.widget.Toast;
 
 import com.android.bali.App;
 import com.android.bali.R;
-import com.android.bali.adapters.CategoriesAdapter;
-import com.android.bali.models.Category;
 import com.android.bali.models.Posts;
 
-import java.util.ArrayList;
-
 /**
- * Created by zaur_ on 13-Nov-17.
+ * Created by zaur_ on 19.11.2017.
  */
 
-public class BaliFragment extends Fragment {
+public class PostsFragment extends Fragment {
 
     private ListView listView;
-    private CategoriesAdapter adapter;
-    ArrayList<Category> categories;
     Posts posts;
     App app;
 
@@ -38,9 +32,6 @@ public class BaliFragment extends Fragment {
 
         listView = view.findViewById(R.id.bali_list_items);
         app = (App) getContext().getApplicationContext();
-        categories = app.getxStreamHelper().getCategories();
-        adapter = new CategoriesAdapter(this.getContext(), categories);
-        listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -66,6 +57,5 @@ public class BaliFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        adapter.notifyDataSetChanged();
     }
 }
