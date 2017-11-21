@@ -23,7 +23,11 @@ public class XStreamHelper {
 
     private Context context;
     private ArrayList<Category> categories = new ArrayList<>();
+    private ArrayList<Post> posts=new ArrayList<>();
     private ArrayList<Post> tickets = new ArrayList<>();
+
+    Data data;
+
 
     public XStreamHelper(Context context) {
         this.context = context;
@@ -51,9 +55,10 @@ public class XStreamHelper {
             xs.addImplicitCollection(Posts.class, "post");
             xs.alias("post", Post.class);
 
-            Data data = (Data) xs.fromXML(fileReader);
+            data = (Data) xs.fromXML(fileReader);
             categories.addAll(data.getCategories().getCategory());
             tickets.addAll(data.getTickets().getPosts().getPost());
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -68,4 +73,9 @@ public class XStreamHelper {
     public ArrayList<Post> getTickets() {
         return tickets;
     }
+
+    public ArrayList<Post> getPosts(int category){
+        posts.addAll(data.getCategories().getCategory().get(category).getPosts().getPost());
+        return posts;}
+
 }

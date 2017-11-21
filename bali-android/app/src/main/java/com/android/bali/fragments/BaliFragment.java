@@ -1,6 +1,7 @@
 package com.android.bali.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.android.bali.App;
 import com.android.bali.R;
+import com.android.bali.activities.PostsActivity;
 import com.android.bali.adapters.CategoriesAdapter;
 import com.android.bali.models.Category;
 import com.android.bali.models.Posts;
@@ -45,7 +47,9 @@ public class BaliFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getContext(), app.getxStreamHelper().getCategories().get(i).getPosts().getPost().get(i).getTitle(), Toast.LENGTH_SHORT).show();
-                posts.setPost(app.getxStreamHelper().getCategories().get(i).getPosts().getPost());
+                Intent intent = new Intent(getContext(),PostsActivity.class);
+                intent.putExtra("category",i);
+                startActivity(intent);
 
             }
         });
