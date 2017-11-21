@@ -3,6 +3,9 @@ package com.android.bali.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.android.bali.App;
@@ -26,14 +29,28 @@ public class PostsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_posts);
         app = (App) getApplicationContext();
+
         Bundle bundle = getIntent().getExtras();
         if (bundle!=null){
             category= (int) bundle.get("category");
         }
         listView = findViewById(R.id.posts_list_items);
+
         posts = app.getxStreamHelper().getPosts(category);
+
         adapter = new PostAdapter(this, posts);
+
         listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(PostsActivity.this, WebActivity.class);
+                intent.putExtra("category",category);
+                intent.putExtra("post",position);
+                startActivity(intent);
+            }
+        });
 
     }
 
