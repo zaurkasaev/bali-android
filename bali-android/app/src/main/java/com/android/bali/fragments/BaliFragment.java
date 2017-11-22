@@ -46,7 +46,6 @@ public class BaliFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getContext(), app.getxStreamHelper().getCategories().get(i).getPosts().getPost().get(i).getTitle(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(),PostsActivity.class);
                 intent.putExtra("category",i);
                 startActivity(intent);

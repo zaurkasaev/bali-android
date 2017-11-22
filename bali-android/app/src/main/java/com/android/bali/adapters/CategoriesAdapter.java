@@ -23,27 +23,14 @@ import java.util.ArrayList;
  * Created by zaur_ on 17.11.2017.
  */
 
-public class CategoriesAdapter extends BaseAdapter/*ArrayAdapter<Category> */{
+public class CategoriesAdapter extends BaseAdapter{
 
     private ArrayList<Category> categories;
     private Context context;
-    private App app;
-    private Picasso picasso;
 
-    public CategoriesAdapter(Context context, /*int resource,*/ ArrayList<Category> objects) {
-        //super(context, resource);
+    public CategoriesAdapter(Context context,ArrayList<Category> objects) {
         categories = objects;
         this.context = context;
-        app = (App) context.getApplicationContext();
-//        picasso = new Picasso.Builder(context)
-//                .listener(new Picasso.Listener() {
-//                    @Override
-//                    public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception) {
-//                        //Here your log
-//                        Log.d("Picasso", exception.getLocalizedMessage());
-//                    }
-//                })
-//                .build();
     }
 
     private class CategoriesViewHolder {

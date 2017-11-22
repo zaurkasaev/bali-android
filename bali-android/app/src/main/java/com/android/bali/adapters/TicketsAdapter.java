@@ -26,12 +26,10 @@ public class TicketsAdapter extends BaseAdapter {
 
     ArrayList<Post> posts;
     Context context;
-    int width;
 
-    public TicketsAdapter(Context context, ArrayList<Post> objects,int width) {
+    public TicketsAdapter(Context context, ArrayList<Post> objects) {
         this.context = context;
         posts = objects;
-        this.width=width;
 
     }
 
@@ -93,7 +91,6 @@ public class TicketsAdapter extends BaseAdapter {
             String s = e.getMessage();
         }
 
-        convertView.setLayoutParams(new GridView.LayoutParams(width,width));
         return convertView;
     }
 }

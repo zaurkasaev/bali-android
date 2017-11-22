@@ -28,15 +28,11 @@ public class TicketsFragment extends Fragment {
     TicketsAdapter adapter;
     GridView gridView;
 
-    Integer width;
-
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tickets, container, false);
-
-        CalculateItemHeight();
 
         gridView = view.findViewById(R.id.tickets_grid_view);
 
@@ -44,7 +40,7 @@ public class TicketsFragment extends Fragment {
 
         posts = app.getxStreamHelper().getTickets();
 
-        adapter = new TicketsAdapter(getContext(), posts,width);
+        adapter = new TicketsAdapter(getContext(), posts);
 
         gridView.setAdapter(adapter);
 
@@ -59,11 +55,5 @@ public class TicketsFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-    }
-
-    public void CalculateItemHeight() {
-        DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
-        int widthDisplay = displayMetrics.widthPixels;
-        width = (widthDisplay / 2 - 30);
     }
 }
