@@ -48,7 +48,7 @@ public class PostAdapter extends BaseAdapter {
                     .fitCenter()
                     .into(postImage);
             postTitle.setText(post.getTitle());
-            postAnnotation.setText(post.getUrl());
+            postAnnotation.setText(post.getShort());
         }
 
 

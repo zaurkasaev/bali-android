@@ -1,10 +1,16 @@
 package com.android.bali.models;
 
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementArray;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Root;
+
 /**
  * Created by zaur_ on 14-Nov-17.
  */
 
 public class Category {
+
     private String buttonURL;
 
     private String name;

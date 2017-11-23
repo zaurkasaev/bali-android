@@ -5,11 +5,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
 import com.android.bali.App;
 import com.android.bali.R;
+import com.android.bali.adapters.CategoriesAdapter;
 import com.android.bali.fragments.BaliFragment;
 import com.android.bali.fragments.ConverterFragment;
 import com.android.bali.fragments.TicketsFragment;
@@ -18,6 +20,10 @@ import com.android.bali.models.Category;
 
 import java.util.ArrayList;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
@@ -25,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     Menu menu;
     int previous = 0;
 
-    ArrayList<Category> categories;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +39,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Bali");
         tabLayout = findViewById(R.id.tabLayout);
-        categories = new ArrayList<>();
 
         App app = (App) getApplicationContext();
 
-        app.getxStreamHelper().getData();
+        App.getApi().getStringData().enqueue(new Callback<String>(){
+
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                String s = response.body();
+                app.getxStreamHelper().getData(s);
+
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Log.d("ERR", t.getMessage());
+            }
+        });
 
 
         tabLayout.addTab(tabLayout.newTab());

@@ -15,6 +15,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import retrofit2.Retrofit;
+
+import retrofit2.http.GET;
+
 /**
  * Created by zaur_ on 17.11.2017.
  */
@@ -28,15 +32,17 @@ public class XStreamHelper {
 
     Data data;
 
+    Retrofit retrofit;
+
 
     public XStreamHelper(Context context) {
         this.context = context;
     }
 
-    public void getData() {
-        try {
-            InputStream fileReader;
-            fileReader = context.getAssets().open("codebeautify.xml");
+    public void getData(String tmp) {
+
+
+
             XStream xs = new XStream();
             xs.alias("data", Data.class);
 
@@ -55,15 +61,12 @@ public class XStreamHelper {
             xs.addImplicitCollection(Posts.class, "post");
             xs.alias("post", Post.class);
 
-            data = (Data) xs.fromXML(fileReader);
+            xs.processAnnotations(Post.class);
+            data = (Data) xs.fromXML(tmp);
             categories.addAll(data.getCategories().getCategory());
             tickets.addAll(data.getTickets().getPosts().getPost());
 
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+
     }
 
     public ArrayList<Category> getCategories() {
