@@ -16,9 +16,6 @@ import retrofit2.http.Query;
 
 public interface RetrofitInterface {
     @GET ("/")
-    Call<Data> getData();
-
-    @GET ("/")
     Call<String> getStringData();
 
 }

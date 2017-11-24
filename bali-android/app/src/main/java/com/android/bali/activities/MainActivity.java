@@ -42,20 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         App app = (App) getApplicationContext();
 
-        App.getApi().getStringData().enqueue(new Callback<String>(){
 
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                String s = response.body();
-                app.getxStreamHelper().getData(s);
-
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.d("ERR", t.getMessage());
-            }
-        });
 
 
         tabLayout.addTab(tabLayout.newTab());

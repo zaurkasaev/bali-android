@@ -10,14 +10,9 @@ import com.android.bali.models.Posts;
 import com.android.bali.models.Tickets;
 import com.thoughtworks.xstream.XStream;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
-import retrofit2.Retrofit;
 
-import retrofit2.http.GET;
 
 /**
  * Created by zaur_ on 17.11.2017.
@@ -27,12 +22,10 @@ public class XStreamHelper {
 
     private Context context;
     private ArrayList<Category> categories = new ArrayList<>();
-    private ArrayList<Post> posts=new ArrayList<>();
+    private ArrayList<Post> posts = new ArrayList<>();
     private ArrayList<Post> tickets = new ArrayList<>();
 
     Data data;
-
-    Retrofit retrofit;
 
 
     public XStreamHelper(Context context) {
@@ -42,29 +35,28 @@ public class XStreamHelper {
     public void getData(String tmp) {
 
 
+        XStream xs = new XStream();
+        xs.alias("data", Data.class);
 
-            XStream xs = new XStream();
-            xs.alias("data", Data.class);
+        xs.alias("categories", Categories.class);
+        xs.addImplicitCollection(Categories.class, "category");
 
-            xs.alias("categories", Categories.class);
-            xs.addImplicitCollection(Categories.class, "category");
+        xs.alias("category", Category.class);
 
-            xs.alias("category", Category.class);
+        xs.alias("posts", Posts.class);
+        xs.addImplicitCollection(Posts.class, "post");
+        xs.alias("post", Post.class);
 
-            xs.alias("posts", Posts.class);
-            xs.addImplicitCollection(Posts.class, "post");
-            xs.alias("post", Post.class);
+        xs.alias("tickets", Tickets.class);
 
-            xs.alias("tickets", Tickets.class);
+        xs.alias("posts", Posts.class);
+        xs.addImplicitCollection(Posts.class, "post");
+        xs.alias("post", Post.class);
 
-            xs.alias("posts", Posts.class);
-            xs.addImplicitCollection(Posts.class, "post");
-            xs.alias("post", Post.class);
-
-            xs.processAnnotations(Post.class);
-            data = (Data) xs.fromXML(tmp);
-            categories.addAll(data.getCategories().getCategory());
-            tickets.addAll(data.getTickets().getPosts().getPost());
+        xs.processAnnotations(Post.class);
+        data = (Data) xs.fromXML(tmp);
+        categories.addAll(data.getCategories().getCategory());
+        tickets.addAll(data.getTickets().getPosts().getPost());
 
 
     }
@@ -77,8 +69,9 @@ public class XStreamHelper {
         return tickets;
     }
 
-    public ArrayList<Post> getPosts(int category){
+    public ArrayList<Post> getPosts(int category) {
         posts.addAll(data.getCategories().getCategory().get(category).getPosts().getPost());
-        return posts;}
+        return posts;
+    }
 
 }
