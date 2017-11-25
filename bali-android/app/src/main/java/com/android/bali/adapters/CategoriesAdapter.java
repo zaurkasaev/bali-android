@@ -1,6 +1,7 @@
 package com.android.bali.adapters;
 
 import android.content.Context;
+
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -17,7 +18,6 @@ import com.android.bali.App;
 import com.android.bali.R;
 import com.android.bali.models.Category;
 import com.bumptech.glide.Glide;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
