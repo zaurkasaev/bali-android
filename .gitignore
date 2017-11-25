@@ -2,3 +2,5 @@
 *.bin
 
 bali-android/\.idea/workspace\.xml
+
+bali-android/build/
