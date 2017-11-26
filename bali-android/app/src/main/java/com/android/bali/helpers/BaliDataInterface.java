@@ -14,7 +14,7 @@ import retrofit2.http.Query;
  * Created by zaur on 22/11/2017.
  */
 
-public interface RetrofitInterface {
+public interface BaliDataInterface {
     @GET ("/")
     Call<String> getStringData();
 

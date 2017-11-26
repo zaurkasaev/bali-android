@@ -8,6 +8,8 @@ import com.android.bali.models.Data;
 import com.android.bali.models.Post;
 import com.android.bali.models.Posts;
 import com.android.bali.models.Tickets;
+import com.android.bali.models.convertor.ValCurs;
+import com.android.bali.models.convertor.Valute;
 import com.thoughtworks.xstream.XStream;
 
 import java.util.ArrayList;
@@ -21,11 +23,15 @@ import java.util.ArrayList;
 public class XStreamHelper {
 
     private Context context;
+
     private ArrayList<Category> categories = new ArrayList<>();
     private ArrayList<Post> posts = new ArrayList<>();
     private ArrayList<Post> tickets = new ArrayList<>();
+    private ArrayList<Valute> valutes=new ArrayList<>();
 
     Data data;
+
+    ValCurs valCurs;
 
 
     public XStreamHelper(Context context) {
@@ -33,7 +39,6 @@ public class XStreamHelper {
     }
 
     public void getData(String tmp) {
-
 
         XStream xs = new XStream();
         xs.alias("data", Data.class);
@@ -57,8 +62,19 @@ public class XStreamHelper {
         data = (Data) xs.fromXML(tmp);
         categories.addAll(data.getCategories().getCategory());
         tickets.addAll(data.getTickets().getPosts().getPost());
+    }
 
+    public void getCourse(String tmp){
+        XStream xs =new XStream();
 
+        xs.alias("ValCurs", ValCurs.class);
+        xs.addImplicitCollection(ValCurs.class,"Valute");
+
+        xs.alias("Valute",Valute.class);
+
+        valCurs= (ValCurs) xs.fromXML(tmp);
+
+        valutes.addAll(valCurs.getValute());
     }
 
     public ArrayList<Category> getCategories() {
@@ -72,6 +88,10 @@ public class XStreamHelper {
     public ArrayList<Post> getPosts(int category) {
         posts.addAll(data.getCategories().getCategory().get(category).getPosts().getPost());
         return posts;
+    }
+
+    public ArrayList<Valute> getValutes() {
+        return valutes;
     }
 
 }
