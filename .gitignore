@@ -6,3 +6,11 @@ bali-android/\.idea/workspace\.xml
 bali-android/build/
 
 bali-android/\.idea/
+
+bali-android/\.gradle/4\.1/fileHashes/
+
+*.lock
+
+*.xml
+
+*.properties
