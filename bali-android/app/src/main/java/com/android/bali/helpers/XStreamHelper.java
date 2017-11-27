@@ -19,12 +19,12 @@ import com.android.bali.models.weather.Image;
 import com.android.bali.models.weather.Item;
 import com.android.bali.models.weather.Location;
 import com.android.bali.models.weather.Query;
+import com.android.bali.models.weather.Results;
 import com.android.bali.models.weather.Units;
 import com.android.bali.models.weather.Wind;
 import com.thoughtworks.xstream.XStream;
 
 import java.util.ArrayList;
-
 
 
 /**
@@ -38,7 +38,8 @@ public class XStreamHelper {
     private ArrayList<Category> categories = new ArrayList<>();
     private ArrayList<Post> posts = new ArrayList<>();
     private ArrayList<Post> tickets = new ArrayList<>();
-    private ArrayList<Valute> valutes=new ArrayList<>();
+    private ArrayList<Valute> valutes = new ArrayList<>();
+    private ArrayList<Forecast> forecasts=new ArrayList<>();
 
 
     Data data;
@@ -78,51 +79,55 @@ public class XStreamHelper {
         tickets.addAll(data.getTickets().getPosts().getPost());
     }
 
-    public void getCourse(String tmp){
-        XStream xs =new XStream();
+    public void getCourse(String tmp) {
+        XStream xs = new XStream();
 
         xs.alias("ValCurs", ValCurs.class);
-        xs.addImplicitCollection(ValCurs.class,"Valute");
+        xs.addImplicitCollection(ValCurs.class, "Valute");
 
-        xs.alias("Valute",Valute.class);
+        xs.alias("Valute", Valute.class);
 
-        valCurs= (ValCurs) xs.fromXML(tmp);
+        valCurs = (ValCurs) xs.fromXML(tmp);
 
         valutes.addAll(valCurs.getValute());
     }
 
-    public void getWeather(String tmp){
+    public void getWeather(String tmp) {
 
         XStream xs = new XStream();
 
         xs.alias("query", Query.class);
 
-
+        xs.alias("results", Results.class);
 
         xs.alias("channel", Channel.class);
 
-        xs.alias("units",Units.class);
+        xs.alias("yweather:units", Units.class);
 
-        xs.alias("location", Location.class);
+        xs.alias("yweather:location", Location.class);
 
-        xs.alias("wind", Wind.class);
+        xs.alias("yweather:wind", Wind.class);
 
-        xs.alias("atmosphere", Atmosphere.class);
+        xs.alias("yweather:atmosphere", Atmosphere.class);
 
-        xs.alias("astronomy", Astronomy.class);
+        xs.alias("yweather:astronomy", Astronomy.class);
 
         xs.alias("image", Image.class);
 
         xs.alias("item", Item.class);
-        xs.addImplicitCollection(Item.class,"yweather:forecast");
+        xs.addImplicitCollection(Item.class, "forecast");
+
+        xs.alias("yweather:forecast", Forecast.class);
 
         xs.alias("condition", Condition.class);
-        xs.alias("yweather:forecast", Forecast.class);
+
 
         xs.processAnnotations(Channel.class);
         xs.processAnnotations(Item.class);
-        query= (Query) xs.fromXML(tmp);
 
+        query = (Query) xs.fromXML(tmp);
+
+        forecasts.addAll(query.getResults().getChannel().getItem().getForecast());
     }
 
     public ArrayList<Category> getCategories() {
@@ -142,6 +147,11 @@ public class XStreamHelper {
         return valutes;
     }
 
-    public Query getQuery(){return query;}
+    public Query getQuery() {
+        return query;
+    }
 
+    public ArrayList<Forecast> getForecasts() {
+        return forecasts;
+    }
 }

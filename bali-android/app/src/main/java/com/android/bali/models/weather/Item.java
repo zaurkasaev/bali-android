@@ -16,7 +16,7 @@ public class Item {
 
     private String title;
 
-    @XStreamAlias("yweather:forecast")
+
     private List<Forecast> forecast;
     @XStreamAlias("yweather:condition")
     private Condition condition;

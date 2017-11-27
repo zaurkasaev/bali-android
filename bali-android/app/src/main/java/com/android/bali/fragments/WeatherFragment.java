@@ -45,7 +45,7 @@ public class WeatherFragment extends Fragment {
             public void onResponse(Call<String> call, Response<String> response) {
                 String s = response.body();
                 app.getxStreamHelper().getWeather(s);
-                String d=app.getxStreamHelper().getQuery().getCount();
+                String d=app.getxStreamHelper().getForecasts().get(1).getDate();
             }
 
             @Override

@@ -1,5 +1,7 @@
 package com.android.bali.models.weather;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 /**
  * Created by zaur_ on 26-Nov-17.
  */
