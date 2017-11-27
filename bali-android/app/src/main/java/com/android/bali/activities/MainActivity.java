@@ -1,8 +1,11 @@
 package com.android.bali.activities;
 
+import android.app.FragmentManager;
+
+
 import android.os.Bundle;
+
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -24,7 +27,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
-    FragmentManager manager;
+    android.support.v4.app.FragmentManager manager;
     Menu menu;
     int previous = 0;
 

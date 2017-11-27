@@ -1,24 +1,32 @@
 package com.android.bali.models.weather;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
 /**
  * Created by zaur_ on 26-Nov-17.
  */
 
 public class Channel {
+
+    @XStreamAlias("yweather:wind")
     private Wind wind;
 
+    @XStreamAlias("yweather:location")
     private Location location;
 
     private String link;
 
+    @XStreamAlias("yweather:atmosphere")
     private Atmosphere atmosphere;
 
     private Image image;
 
     private String ttl;
 
+    @XStreamAlias("yweather:astronomy")
     private Astronomy astronomy;
 
+    @XStreamAlias("yweather:units")
     private Units units;
 
     private String title;

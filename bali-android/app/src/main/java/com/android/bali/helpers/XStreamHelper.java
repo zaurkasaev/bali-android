@@ -10,6 +10,17 @@ import com.android.bali.models.Posts;
 import com.android.bali.models.Tickets;
 import com.android.bali.models.convertor.ValCurs;
 import com.android.bali.models.convertor.Valute;
+import com.android.bali.models.weather.Astronomy;
+import com.android.bali.models.weather.Atmosphere;
+import com.android.bali.models.weather.Channel;
+import com.android.bali.models.weather.Condition;
+import com.android.bali.models.weather.Forecast;
+import com.android.bali.models.weather.Image;
+import com.android.bali.models.weather.Item;
+import com.android.bali.models.weather.Location;
+import com.android.bali.models.weather.Query;
+import com.android.bali.models.weather.Units;
+import com.android.bali.models.weather.Wind;
 import com.thoughtworks.xstream.XStream;
 
 import java.util.ArrayList;
@@ -29,9 +40,12 @@ public class XStreamHelper {
     private ArrayList<Post> tickets = new ArrayList<>();
     private ArrayList<Valute> valutes=new ArrayList<>();
 
+
     Data data;
 
     ValCurs valCurs;
+
+    Query query;
 
 
     public XStreamHelper(Context context) {
@@ -77,6 +91,40 @@ public class XStreamHelper {
         valutes.addAll(valCurs.getValute());
     }
 
+    public void getWeather(String tmp){
+
+        XStream xs = new XStream();
+
+        xs.alias("query", Query.class);
+
+
+
+        xs.alias("channel", Channel.class);
+
+        xs.alias("units",Units.class);
+
+        xs.alias("location", Location.class);
+
+        xs.alias("wind", Wind.class);
+
+        xs.alias("atmosphere", Atmosphere.class);
+
+        xs.alias("astronomy", Astronomy.class);
+
+        xs.alias("image", Image.class);
+
+        xs.alias("item", Item.class);
+        xs.addImplicitCollection(Item.class,"yweather:forecast");
+
+        xs.alias("condition", Condition.class);
+        xs.alias("yweather:forecast", Forecast.class);
+
+        xs.processAnnotations(Channel.class);
+        xs.processAnnotations(Item.class);
+        query= (Query) xs.fromXML(tmp);
+
+    }
+
     public ArrayList<Category> getCategories() {
         return categories;
     }
@@ -93,5 +141,7 @@ public class XStreamHelper {
     public ArrayList<Valute> getValutes() {
         return valutes;
     }
+
+    public Query getQuery(){return query;}
 
 }

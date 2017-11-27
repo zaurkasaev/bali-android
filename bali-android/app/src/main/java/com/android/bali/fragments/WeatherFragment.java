@@ -1,8 +1,10 @@
 package com.android.bali.fragments;
 
+
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,7 +24,10 @@ import retrofit2.Response;
  */
 
 public class WeatherFragment extends Fragment {
-    String query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"Denpasar\")&format=xml";
+    String query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"Denpasar\")";
+    String format = "xml";
+
+    App app;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +38,14 @@ public class WeatherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_weather, container, false);
 
-        App.getWeatherInterface().getWeather(query).enqueue(new Callback<String>() {
+        app= (App) getContext().getApplicationContext();
+
+        App.getWeatherInterface().getWeather(query, format).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 String s = response.body();
+                app.getxStreamHelper().getWeather(s);
+                String d=app.getxStreamHelper().getQuery().getCount();
             }
 
             @Override
