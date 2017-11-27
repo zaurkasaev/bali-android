@@ -1,9 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.percent.PercentFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:text="Converter"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</RelativeLayout>
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_gravity="center"
+        app:layout_heightPercent="40%"
+        app:layout_widthPercent="100%">
+
+        <LinearLayout
+            android:layout_alignParentTop="true"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="100%">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="2"
+                android:inputType="number" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:src="@drawable/converter_img" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom"
+                android:layout_weight="2"
+                android:src="@drawable/bali_image" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lv"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            app:layout_heightPercent="50%"
+            app:layout_widthPercent="100%">
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="2" />
+
+            <ImageView
+                android:src="@drawable/bali_image"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </android.support.percent.PercentRelativeLayout>
+
+</android.support.percent.PercentFrameLayout>
