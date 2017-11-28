@@ -16,3 +16,7 @@ bali-android/\.gradle/4\.1/fileHashes/
 *.properties
 
 bali-android/app/app\.iml
+
+bali-android/\.gradle/4\.1/javaCompile/
+
+bali-android/\.gradle/4\.1/taskHistory/
