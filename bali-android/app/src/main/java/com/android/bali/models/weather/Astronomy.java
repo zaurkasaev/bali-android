@@ -1,37 +1,34 @@
 package com.android.bali.models.weather;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by zaur_ on 26-Nov-17.
  */
 
 public class Astronomy {
+
+    @SerializedName("sunrise")
+    @Expose
+    private String sunrise;
+    @SerializedName("sunset")
+    @Expose
     private String sunset;
 
-    private String sunrise;
-
-    public String getSunset ()
-    {
-        return sunset;
-    }
-
-    public void setSunset (String sunset)
-    {
-        this.sunset = sunset;
-    }
-
-    public String getSunrise ()
-    {
+    public String getSunrise() {
         return sunrise;
     }
 
-    public void setSunrise (String sunrise)
-    {
+    public void setSunrise(String sunrise) {
         this.sunrise = sunrise;
     }
 
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [sunset = "+sunset+", sunrise = "+sunrise+"]";
+    public String getSunset() {
+        return sunset;
+    }
+
+    public void setSunset(String sunset) {
+        this.sunset = sunset;
     }
 }

@@ -1,5 +1,7 @@
 package com.android.bali.models.weather;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import java.util.List;
@@ -10,40 +12,33 @@ import java.util.List;
 
 public class Item {
 
-    private Guid guid;
-
-    private String pubDate;
-
+    @SerializedName("title")
+    @Expose
     private String title;
-
-
-    private List<Forecast> forecast;
-    @XStreamAlias("yweather:condition")
-    private Condition condition;
-
-    private String description;
-
-    private String link;
-    @XStreamAlias("geo:long")
-    private String _long;
-    @XStreamAlias("geo:lat")
+    @SerializedName("lat")
+    @Expose
     private String lat;
-
-    public Guid getGuid() {
-        return guid;
-    }
-
-    public void setGuid(Guid guid) {
-        this.guid = guid;
-    }
-
-    public String getPubDate() {
-        return pubDate;
-    }
-
-    public void setPubDate(String pubDate) {
-        this.pubDate = pubDate;
-    }
+    @SerializedName("long")
+    @Expose
+    private String _long;
+    @SerializedName("link")
+    @Expose
+    private String link;
+    @SerializedName("pubDate")
+    @Expose
+    private String pubDate;
+    @SerializedName("condition")
+    @Expose
+    private Condition condition;
+    @SerializedName("forecast")
+    @Expose
+    private List<Forecast> forecast = null;
+    @SerializedName("description")
+    @Expose
+    private String description;
+    @SerializedName("guid")
+    @Expose
+    private Guid guid;
 
     public String getTitle() {
         return title;
@@ -51,46 +46,6 @@ public class Item {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public List<Forecast> getForecast() {
-        return forecast;
-    }
-
-    public void setForecast(List<Forecast> forecast) {
-        this.forecast = forecast;
-    }
-
-    public Condition getCondition() {
-        return condition;
-    }
-
-    public void setCondition(Condition condition) {
-        this.condition = condition;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public String getLong() {
-        return _long;
-    }
-
-    public void setLong(String _long) {
-        this._long = _long;
     }
 
     public String getLat() {
@@ -101,8 +56,59 @@ public class Item {
         this.lat = lat;
     }
 
-    @Override
-    public String toString() {
-        return "ClassPojo [guid = " + guid + ", pubDate = " + pubDate + ", title = " + title + ", forecast = " + forecast + ", condition = " + condition + ", description = " + description + ", link = " + link + ", long = " + _long + ", lat = " + lat + "]";
+    public String getLong() {
+        return _long;
+    }
+
+    public void setLong(String _long) {
+        this._long = _long;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getPubDate() {
+        return pubDate;
+    }
+
+    public void setPubDate(String pubDate) {
+        this.pubDate = pubDate;
+    }
+
+    public Condition getCondition() {
+        return condition;
+    }
+
+    public void setCondition(Condition condition) {
+        this.condition = condition;
+    }
+
+    public List<Forecast> getForecast() {
+        return forecast;
+    }
+
+    public void setForecast(List<Forecast> forecast) {
+        this.forecast = forecast;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Guid getGuid() {
+        return guid;
+    }
+
+    public void setGuid(Guid guid) {
+        this.guid = guid;
     }
 }

@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.android.bali.App;
 import com.android.bali.R;
 import com.android.bali.models.weather.Query;
+import com.android.bali.models.weather.Root;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,7 +26,7 @@ import retrofit2.Response;
 
 public class WeatherFragment extends Fragment {
     String query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"Denpasar\")";
-    String format = "xml";
+    String format = "json";
 
     App app;
     @Override
@@ -40,19 +41,18 @@ public class WeatherFragment extends Fragment {
 
         app= (App) getContext().getApplicationContext();
 
-        App.getWeatherInterface().getWeather(query, format).enqueue(new Callback<String>() {
+        App.getWeatherInterface().getWeather(query, format).enqueue(new Callback<Root>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                String s = response.body();
-                app.getxStreamHelper().getWeather(s);
-                String d=app.getxStreamHelper().getForecasts().get(1).getDate();
+            public void onResponse(Call<Root> call, Response<Root> response) {
+                String s = response.body().getQuery().getResults().getChannel().getItem().getForecast().get(0).getDate();
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.e("Err",t.getMessage());
+            public void onFailure(Call<Root> call, Throwable t) {
+            Log.e("Err",t.getMessage());
             }
         });
+
 
 
 

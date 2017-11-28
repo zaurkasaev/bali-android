@@ -40,7 +40,7 @@ public class App extends Application {
 
         retrofitWeather = new Retrofit.Builder()
                 .baseUrl("https://query.yahooapis.com")
-                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         converter = new Retrofit.Builder()

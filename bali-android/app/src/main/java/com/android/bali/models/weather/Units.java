@@ -1,61 +1,56 @@
 package com.android.bali.models.weather;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by zaur_ on 26-Nov-17.
  */
 
 public class Units {
+    @SerializedName("distance")
+    @Expose
     private String distance;
-
+    @SerializedName("pressure")
+    @Expose
     private String pressure;
-
+    @SerializedName("speed")
+    @Expose
     private String speed;
-
+    @SerializedName("temperature")
+    @Expose
     private String temperature;
 
-    public String getDistance ()
-    {
+    public String getDistance() {
         return distance;
     }
 
-    public void setDistance (String distance)
-    {
+    public void setDistance(String distance) {
         this.distance = distance;
     }
 
-    public String getPressure ()
-    {
+    public String getPressure() {
         return pressure;
     }
 
-    public void setPressure (String pressure)
-    {
+    public void setPressure(String pressure) {
         this.pressure = pressure;
     }
 
-    public String getSpeed ()
-    {
+    public String getSpeed() {
         return speed;
     }
 
-    public void setSpeed (String speed)
-    {
+    public void setSpeed(String speed) {
         this.speed = speed;
     }
 
-    public String getTemperature ()
-    {
+    public String getTemperature() {
         return temperature;
     }
 
-    public void setTemperature (String temperature)
-    {
+    public void setTemperature(String temperature) {
         this.temperature = temperature;
     }
 
-    @Override
-    public String toString()
-    {
-        return "ClassPojo [distance = "+distance+", pressure = "+pressure+", speed = "+speed+", temperature = "+temperature+"]";
-    }
 }
