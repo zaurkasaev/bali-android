@@ -29,6 +29,7 @@ public class WeatherFragment extends Fragment {
     String format = "json";
 
     App app;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,24 +40,23 @@ public class WeatherFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_weather, container, false);
 
-        app= (App) getContext().getApplicationContext();
+        app = (App) getContext().getApplicationContext();
 
         App.getWeatherInterface().getWeather(query, format).enqueue(new Callback<Root>() {
             @Override
             public void onResponse(Call<Root> call, Response<Root> response) {
-                String s = response.body().getQuery().getResults().getChannel().getItem().getForecast().get(0).getDate();
+                String s = response.body().getQuery().getResults().getChannel().getUnits().getTemperature();
             }
 
             @Override
             public void onFailure(Call<Root> call, Throwable t) {
-            Log.e("Err",t.getMessage());
+                Log.e("Err", t.getMessage());
             }
         });
 
 
-
-
-        return view;    }
+        return view;
+    }
 
     @Override
     public void onAttach(Context context) {

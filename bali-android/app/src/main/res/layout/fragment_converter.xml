@@ -15,11 +15,13 @@
             app:layout_widthPercent="100%">
 
             <EditText
+                android:id="@+id/conv_input"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_weight="2"
                 android:inputType="number" />
+
 
             <ImageView
                 android:layout_width="0dp"
@@ -45,15 +47,17 @@
             app:layout_widthPercent="100%">
 
             <TextView
+                android:id="@+id/conv_output"
                 android:layout_gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="30dp"
                 android:layout_weight="2" />
 
             <ImageView
+                android:layout_gravity="center"
                 android:src="@drawable/bali_image"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="30dp"
                 android:layout_weight="1" />
         </LinearLayout>
     </android.support.percent.PercentRelativeLayout>

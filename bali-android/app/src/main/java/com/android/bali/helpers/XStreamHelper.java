@@ -39,14 +39,14 @@ public class XStreamHelper {
     private ArrayList<Post> posts = new ArrayList<>();
     private ArrayList<Post> tickets = new ArrayList<>();
     private ArrayList<Valute> valutes = new ArrayList<>();
-    private ArrayList<Forecast> forecasts=new ArrayList<>();
+
 
 
     Data data;
 
     ValCurs valCurs;
 
-    Query query;
+
 
 
     public XStreamHelper(Context context) {
@@ -87,48 +87,12 @@ public class XStreamHelper {
 
         xs.alias("Valute", Valute.class);
 
+
         valCurs = (ValCurs) xs.fromXML(tmp);
 
         valutes.addAll(valCurs.getValute());
     }
 
-    public void getWeather(String tmp) {
-
-        XStream xs = new XStream();
-
-        xs.alias("query", Query.class);
-
-        xs.alias("results", Results.class);
-
-        xs.alias("channel", Channel.class);
-
-        xs.alias("yweather:units", Units.class);
-
-        xs.alias("yweather:location", Location.class);
-
-        xs.alias("yweather:wind", Wind.class);
-
-        xs.alias("yweather:atmosphere", Atmosphere.class);
-
-        xs.alias("yweather:astronomy", Astronomy.class);
-
-        xs.alias("image", Image.class);
-
-        xs.alias("item", Item.class);
-        xs.addImplicitCollection(Item.class, "forecast");
-
-        xs.alias("yweather:forecast", Forecast.class);
-
-        xs.alias("condition", Condition.class);
-
-
-        xs.processAnnotations(Channel.class);
-        xs.processAnnotations(Item.class);
-
-        query = (Query) xs.fromXML(tmp);
-
-        forecasts.addAll(query.getResults().getChannel().getItem().getForecast());
-    }
 
     public ArrayList<Category> getCategories() {
         return categories;
@@ -147,11 +111,4 @@ public class XStreamHelper {
         return valutes;
     }
 
-    public Query getQuery() {
-        return query;
-    }
-
-    public ArrayList<Forecast> getForecasts() {
-        return forecasts;
-    }
 }
