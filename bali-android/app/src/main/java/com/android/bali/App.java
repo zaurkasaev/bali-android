@@ -44,8 +44,8 @@ public class App extends Application {
                 .build();
 
         converter = new Retrofit.Builder()
-                .baseUrl("https://www.cbr-xml-daily.ru")
-                .addConverterFactory(ScalarsConverterFactory.create())
+                .baseUrl("https://api.fixer.io")
+                .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         converterInterface = converter.create(ConverterInterface.class);
@@ -72,4 +72,5 @@ public class App extends Application {
     public static ConverterInterface getConverterApi() {
         return converterInterface;
     }
+
 }

@@ -12,13 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
 
 import com.android.bali.App;
 import com.android.bali.R;
+import com.android.bali.models.convertor.Data;
 
-import java.text.NumberFormat;
-import java.text.ParseException;
 import java.util.Locale;
 
 import retrofit2.Call;
@@ -32,11 +31,19 @@ import retrofit2.Response;
 public class ConverterFragment extends Fragment {
 
     EditText inputValut;
-    TextView outputValut;
+    EditText outputValut;
+
+    ImageView inputImage;
     App app;
 
-    String current;
-    Double d = 0.0;
+    double current;
+
+    String baseCourse = "RUB";
+
+    private double output;
+    private double input;
+    private String out;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,45 +57,57 @@ public class ConverterFragment extends Fragment {
 
         inputValut = view.findViewById(R.id.conv_input);
         outputValut = view.findViewById(R.id.conv_output);
+        inputImage=view.findViewById(R.id.conv_input_image);
         app = (App) getContext().getApplicationContext();
 
-        App.getConverterApi().getStringData().enqueue(new Callback<String>() {
+        App.getConverterApi().getData(baseCourse).enqueue(new Callback<Data>() {
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                String s = response.body();
-                app.getxStreamHelper().getCourse(s);
-
-                current = app.getxStreamHelper().getValutes().get(1).getValue();
-                NumberFormat format = NumberFormat.getInstance(Locale.FRENCH);
-                try {
-                    d = format.parse(current).doubleValue();
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+            public void onResponse(Call<Data> call, Response<Data> response) {
+                current=response.body().getRates().getUSD();
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
-                Log.e("Err", t.getMessage());
+            public void onFailure(Call<Data> call, Throwable t) {
+
             }
         });
 
         inputValut.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                Log.i("Zaur1",s.toString());
+                Log.i("before", s.toString());
             }
+
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                Log.i("Zaur",s.toString());
+                Log.i("now", s.toString());
+                if (s.length() > 0) {
+                    input = Double.parseDouble(s.toString());
+                    output = input * current;
+                    out = String.format(Locale.ENGLISH, "%.2f", output);
+                    outputValut.setText(out);
+                } else {
+                    outputValut.setText("");
+                }
+
+
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                Log.i("Zaur2",s.toString());
+                Log.i("after", s.toString());
             }
         });
+
+//        inputImage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getContext(), CourseActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+
         return view;
     }
 
@@ -101,4 +120,6 @@ public class ConverterFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
     }
+
+
 }

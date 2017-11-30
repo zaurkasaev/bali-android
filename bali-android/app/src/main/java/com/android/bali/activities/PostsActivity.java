@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebView;
+
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -12,7 +12,7 @@ import com.android.bali.App;
 import com.android.bali.R;
 import com.android.bali.adapters.PostAdapter;
 import com.android.bali.models.Post;
-import com.android.bali.models.Posts;
+
 
 import java.util.ArrayList;
 
