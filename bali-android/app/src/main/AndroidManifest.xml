@@ -3,8 +3,8 @@
     package="com.android.bali">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name=".App"
@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".activities.PostsActivity" />
         <activity android:name=".activities.WebActivity" />
+        <activity android:name=".activities.CourseActivity"></activity>
     </application>
 
 </manifest>

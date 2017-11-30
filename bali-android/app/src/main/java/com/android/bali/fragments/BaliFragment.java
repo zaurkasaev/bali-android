@@ -44,7 +44,7 @@ public class BaliFragment extends Fragment {
         listView = view.findViewById(R.id.bali_list_items);
         app = (App) getContext().getApplicationContext();
 
-        App.getApi().getStringData().enqueue(new Callback<String>(){
+        App.getApi().getStringData().enqueue(new Callback<String>() {
 
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
@@ -85,7 +85,7 @@ public class BaliFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        if (adapter!=null) {
+        if (adapter != null) {
             adapter.notifyDataSetChanged();
         }
     }

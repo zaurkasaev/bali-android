@@ -1,23 +1,31 @@
 package com.android.bali.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 
 import com.android.bali.App;
 import com.android.bali.R;
+import com.android.bali.activities.CourseActivity;
+import com.android.bali.adapters.CoursesAdapter;
 import com.android.bali.models.convertor.Data;
+import com.meetic.marypopup.MaryPopup;
 
+import java.util.ArrayList;
 import java.util.Locale;
 
 import retrofit2.Call;
@@ -38,12 +46,11 @@ public class ConverterFragment extends Fragment {
 
     double current;
 
-    String baseCourse = "RUB";
+    String baseCourse = "USD";
 
     private double output;
     private double input;
     private String out;
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,13 +64,12 @@ public class ConverterFragment extends Fragment {
 
         inputValut = view.findViewById(R.id.conv_input);
         outputValut = view.findViewById(R.id.conv_output);
-        inputImage=view.findViewById(R.id.conv_input_image);
+        inputImage = view.findViewById(R.id.conv_input_image);
         app = (App) getContext().getApplicationContext();
-
         App.getConverterApi().getData(baseCourse).enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
-                current=response.body().getRates().getUSD();
+                current = response.body().getRates().getRUB();
             }
 
             @Override
@@ -100,13 +106,10 @@ public class ConverterFragment extends Fragment {
             }
         });
 
-//        inputImage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getContext(), CourseActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        inputImage.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), CourseActivity.class);
+            startActivity(intent);
+        });
 
         return view;
     }

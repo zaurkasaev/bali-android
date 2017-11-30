@@ -8,8 +8,6 @@ import com.android.bali.models.Data;
 import com.android.bali.models.Post;
 import com.android.bali.models.Posts;
 import com.android.bali.models.Tickets;
-import com.android.bali.models.convertor.ValCurs;
-import com.android.bali.models.convertor.Valute;
 import com.android.bali.models.weather.Astronomy;
 import com.android.bali.models.weather.Atmosphere;
 import com.android.bali.models.weather.Channel;
@@ -38,13 +36,11 @@ public class XStreamHelper {
     private ArrayList<Category> categories = new ArrayList<>();
     private ArrayList<Post> posts = new ArrayList<>();
     private ArrayList<Post> tickets = new ArrayList<>();
-    private ArrayList<Valute> valutes = new ArrayList<>();
+
 
 
 
     Data data;
-
-    ValCurs valCurs;
 
 
 
@@ -79,19 +75,6 @@ public class XStreamHelper {
         tickets.addAll(data.getTickets().getPosts().getPost());
     }
 
-    public void getCourse(String tmp) {
-        XStream xs = new XStream();
-
-        xs.alias("ValCurs", ValCurs.class);
-        xs.addImplicitCollection(ValCurs.class, "Valute");
-
-        xs.alias("Valute", Valute.class);
-
-
-        valCurs = (ValCurs) xs.fromXML(tmp);
-
-        valutes.addAll(valCurs.getValute());
-    }
 
 
     public ArrayList<Category> getCategories() {
@@ -107,8 +90,5 @@ public class XStreamHelper {
         return posts;
     }
 
-    public ArrayList<Valute> getValutes() {
-        return valutes;
-    }
 
 }
