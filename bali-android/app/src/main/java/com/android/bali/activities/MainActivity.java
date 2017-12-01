@@ -1,34 +1,30 @@
 package com.android.bali.activities;
 
-import android.app.FragmentManager;
+
 
 
 import android.os.Bundle;
 
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Menu;
+
 import android.widget.Toast;
 
-import com.android.bali.App;
+
 import com.android.bali.R;
-import com.android.bali.adapters.CategoriesAdapter;
+
 import com.android.bali.fragments.BaliFragment;
 import com.android.bali.fragments.ConverterFragment;
 import com.android.bali.fragments.TicketsFragment;
 import com.android.bali.fragments.WeatherFragment;
-import com.android.bali.models.Category;
-
-import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
-    android.support.v4.app.FragmentManager manager;
-    Menu menu;
+    FragmentManager manager;
     int previous = 0;
 
 
@@ -39,11 +35,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Bali");
         tabLayout = findViewById(R.id.tabLayout);
-
-        App app = (App) getApplicationContext();
-
-
-
 
         tabLayout.addTab(tabLayout.newTab());
         tabLayout.addTab(tabLayout.newTab());

@@ -79,7 +79,6 @@
                     android:layout_height="wrap_content"
                     android:clickable="false"
                     android:focusableInTouchMode="false"
-                    android:hint="RUB"
                     android:inputType="number"
                     android:textColor="@android:color/white" />
             </android.support.design.widget.TextInputLayout>
