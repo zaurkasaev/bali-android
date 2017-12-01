@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 
 import com.android.bali.App;
 import com.android.bali.R;
-import com.android.bali.models.weather.Query;
 import com.android.bali.models.weather.Root;
 
 import retrofit2.Call;

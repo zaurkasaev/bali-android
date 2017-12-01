@@ -45,6 +45,7 @@ public class ConverterFragment extends Fragment {
 
     ImageView inputImage;
     ImageView outputImage;
+    ImageView swap;
     App app;
 
     double current;
@@ -74,10 +75,14 @@ public class ConverterFragment extends Fragment {
         init();
         inputValut = view.findViewById(R.id.conv_input);
         outputValut = view.findViewById(R.id.conv_output);
+
         textInputLayout = view.findViewById(R.id.conv_input_layout);
         textOutputLayout = view.findViewById(R.id.conv_output_layout);
+
         inputImage = view.findViewById(R.id.conv_input_image);
         outputImage = view.findViewById(R.id.conv_output_image);
+        swap = view.findViewById(R.id.swap);
+
         app = (App) getContext().getApplicationContext();
         baseCourse = countriesName.get(0);
         baseOutputCourse = 1;
@@ -118,6 +123,10 @@ public class ConverterFragment extends Fragment {
             popup("output");
         });
 
+        swap.setOnClickListener(v -> {
+            swap();
+        });
+
 
         return view;
     }
@@ -139,7 +148,7 @@ public class ConverterFragment extends Fragment {
                 .show();
 
         listView.setOnItemClickListener((parent, view1, position, id) -> {
-            if(Objects.equals(type, "input")) {
+            if (Objects.equals(type, "input")) {
                 if (Objects.equals(baseCourse, countriesName.get(position))) {
                     Toast.makeText(app, "Current", Toast.LENGTH_SHORT).show();
                 } else {
@@ -164,19 +173,42 @@ public class ConverterFragment extends Fragment {
                         initData(baseCourse, baseOutputCourse + 1);
                     }
                 }
-            }else if (Objects.equals(type, "output")){
-                if (position==baseOutputCourse){
+            } else if (Objects.equals(type, "output")) {
+                if (position == baseOutputCourse) {
                     Toast.makeText(app, "Current", Toast.LENGTH_SHORT).show();
-                }else if(Objects.equals(baseCourse, countriesName.get(position))){
+                } else if (Objects.equals(baseCourse, countriesName.get(position))) {
                     Toast.makeText(app, "It's a base currency", Toast.LENGTH_SHORT).show();
                 } else {
-                    baseOutputCourse=position;
-                    initData(baseCourse,baseOutputCourse);
+                    baseOutputCourse = position;
+                    initData(baseCourse, baseOutputCourse);
                     maryPopup.close(true);
                 }
             }
         });
 
+
+    }
+
+    private void swap() {
+        int output1 = 0;
+        String base = null;
+        int input = 0;
+        for (int i = 0; i < countriesName.size(); i++) {
+
+            if (countriesName.get(i) == textOutputLayout.getHint()) {
+                base = (String) textOutputLayout.getHint();
+                input = i;
+            }
+            if (countriesName.get(i) == textInputLayout.getHint()) {
+                textOutputLayout.setHint(countriesName.get(i));
+                outputImage.setImageResource(countriesImage.get(i));
+                output1 = i;
+            }
+        }
+        initData(base, output1);
+
+        textInputLayout.setHint(base);
+        inputImage.setImageResource(countriesImage.get(input));
 
     }
 
