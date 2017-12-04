@@ -25,6 +25,10 @@
         </activity>
         <activity android:name=".activities.PostsActivity" />
         <activity android:name=".activities.WebActivity" />
+        <activity
+            android:name=".activities.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
