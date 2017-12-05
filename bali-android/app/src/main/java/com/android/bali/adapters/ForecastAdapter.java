@@ -1,6 +1,7 @@
 package com.android.bali.adapters;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,8 @@ import java.util.ArrayList;
  * Created by zaur_ on 05-Dec-17.
  */
 
-public class ForecastAdapter extends BaseAdapter {
+
+public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ViewHolder> {
 
     ArrayList<Forecast> forecasts;
     Context context;
@@ -27,60 +29,48 @@ public class ForecastAdapter extends BaseAdapter {
         this.context = context;
     }
 
-    private class ForecastViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView day;
         TextView condition;
         TextView high;
         TextView low;
 
-        ForecastViewHolder(View itemView) {
+       private   ViewHolder(View itemView) {
+            super(itemView);
             day = itemView.findViewById(R.id.forecast_week_day);
             condition = itemView.findViewById(R.id.forecast_condition);
             high = itemView.findViewById(R.id.forecast_high);
             low = itemView.findViewById(R.id.forecast_low);
         }
 
+
         void setData(Forecast forecast) {
-            day.setText(forecast.getDay());
-            condition.setText(forecast.getText());
-            high.setText(forecast.getHigh());
-            low.setText(forecast.getLow());
+
         }
 
     }
 
+
     @Override
-    public int getCount() {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.forecast_view, parent, false);
+        return new ViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        holder.day.setText(forecasts.get(position).getDay());
+        holder.condition.setText(forecasts.get(position).getText());
+        holder.high.setText(forecasts.get(position).getHigh());
+        holder.low.setText(forecasts.get(position).getLow());
+    }
+
+    @Override
+    public int getItemCount() {
         return forecasts.size();
     }
 
-    @Override
-    public Object getItem(int position) {
-        return forecasts.get(position);
-    }
 
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        final ForecastAdapter.ForecastViewHolder holder;
-        try {
-            Forecast forecast = (Forecast) getItem(position);
-            if (convertView == null) {
-                convertView = LayoutInflater.from(context).inflate(R.layout.forecast_view, parent, false);
-                holder = new ForecastAdapter.ForecastViewHolder(convertView);
-                convertView.setTag(holder);
-            } else
-                holder = (ForecastAdapter.ForecastViewHolder) convertView.getTag();
-
-            holder.setData(forecast);
-        } catch (Exception e) {
-            String s = e.getMessage();
-        }
-        return convertView;
-    }
 }

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +42,7 @@ public class WeatherFragment extends Fragment {
 
     ForecastAdapter adapter;
 
-    ListView listView;
+    RecyclerView listView;
 
     ArrayList<Forecast> forecasts;
 
@@ -75,6 +77,8 @@ public class WeatherFragment extends Fragment {
                 condition.setText(response.body().getQuery().getResults().getChannel().getItem().getCondition().getText());
 
                 forecasts.addAll(response.body().getQuery().getResults().getChannel().getItem().getForecast());
+
+                listView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
                 adapter = new ForecastAdapter(forecasts, getContext());
 
