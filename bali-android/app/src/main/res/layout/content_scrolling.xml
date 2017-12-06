@@ -5,14 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/fragment_weather">
+    tools:showIn="@layout/fragment_weather"
+    >
 
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/forecast_list"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/transparency_black"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             />

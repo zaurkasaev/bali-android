@@ -33,7 +33,7 @@ import retrofit2.Response;
  */
 
 public class WeatherFragment extends Fragment {
-    String query = "select * from weather.forecast where woeid in (select woeid  from geo.places(1) where text=\"Denpasar\")";
+    String query = "select * from weather.forecast where woeid in (select woeid  from geo.places(1) where text=\"Denpasar\")and u='c'";
     String format = "json";
 
     TextView degrees;
