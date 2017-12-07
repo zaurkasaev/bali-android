@@ -3,7 +3,6 @@ package com.android.bali.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
@@ -56,8 +55,8 @@ public class ConverterFragment extends Fragment {
     private double output;
     private double input;
     private String out;
-    private int popupHeight;
     private int popupWidth;
+
     ArrayList<String> countriesName;
     ArrayList<Integer> countriesImage;
 
@@ -231,7 +230,6 @@ public class ConverterFragment extends Fragment {
         DisplayMetrics displayMetrics = this.getResources().getDisplayMetrics();
         int widthDisplay = displayMetrics.widthPixels;
         int heightDisplay = displayMetrics.heightPixels;
-        popupHeight = (int) (heightDisplay * 0.5);
         popupWidth = (int) (widthDisplay * 0.9);
     }
 

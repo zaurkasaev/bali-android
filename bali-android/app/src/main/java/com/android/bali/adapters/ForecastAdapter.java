@@ -2,14 +2,14 @@ package com.android.bali.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.bali.R;
+import com.android.bali.helpers.ConditionIcons;
 import com.android.bali.models.weather.Forecast;
 
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView day;
-        TextView condition;
+        ImageView condition;
         TextView high;
         TextView low;
 
@@ -62,7 +62,13 @@ public class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.day.setText(forecasts.get(position).getDay());
-        holder.condition.setText(forecasts.get(position).getText());
+        for (int i=0;i< ConditionIcons.getIconsMap().size();i++) {
+            int c= Integer.parseInt(forecasts.get(position).getCode());
+            if (ConditionIcons.getIconsMap().containsKey(c)) {
+                holder.condition.setImageResource(ConditionIcons.getIconsMap().get(c));
+            }else holder.condition.setImageResource(R.drawable.confused);
+        }
+
         holder.high.setText(forecasts.get(position).getHigh());
         holder.low.setText(forecasts.get(position).getLow());
     }

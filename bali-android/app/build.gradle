@@ -28,7 +28,6 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.android.support:design:26.1.0'
     compile('com.thoughtworks.xstream:xstream:1.4.7') {
         exclude group: 'xmlpull', module: 'xmlpull'
@@ -48,4 +47,7 @@ dependencies {
     compile 'com.android.support:percent:26.1.0'
     compile 'com.meetic.marypopup:marypopup:1.0.0'
     compile 'com.meetic.dragueur:dragueur:1.0.3'
+
+    compile "com.google.guava:guava:16+"
+
 }
