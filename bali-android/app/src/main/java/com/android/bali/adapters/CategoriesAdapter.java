@@ -1,5 +1,6 @@
 package com.android.bali.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import android.support.annotation.NonNull;
@@ -25,12 +26,12 @@ import java.util.ArrayList;
  * Created by zaur_ on 17.11.2017.
  */
 
-public class CategoriesAdapter extends BaseAdapter{
+public class CategoriesAdapter extends BaseAdapter {
 
     private ArrayList<Category> categories;
     private Context context;
 
-    public CategoriesAdapter(Context context,ArrayList<Category> objects) {
+    public CategoriesAdapter(Context context, ArrayList<Category> objects) {
         categories = objects;
         this.context = context;
     }
@@ -72,6 +73,7 @@ public class CategoriesAdapter extends BaseAdapter{
         return i;
     }
 
+    @SuppressLint("RtlHardcoded")
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -86,6 +88,9 @@ public class CategoriesAdapter extends BaseAdapter{
                 holder = (CategoriesViewHolder) convertView.getTag();
 
             holder.SetData(category);
+            if (position % 2 == 0) {
+                holder.catText.setGravity(Gravity.LEFT);
+            }else holder.catText.setGravity(Gravity.RIGHT);
 
             Log.i("getView", String.valueOf(position));
         } catch (Exception e) {
