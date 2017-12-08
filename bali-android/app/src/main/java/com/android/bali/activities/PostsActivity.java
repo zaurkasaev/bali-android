@@ -31,8 +31,10 @@ public class PostsActivity extends AppCompatActivity {
         app = (App) getApplicationContext();
 
         Bundle bundle = getIntent().getExtras();
-        if (bundle!=null){
-            category= (int) bundle.get("category");
+        if (bundle != null) {
+            if (bundle.get("category") != null) {
+                category = (int) bundle.get("category");
+            }
         }
         listView = findViewById(R.id.posts_list_items);
 
@@ -46,8 +48,8 @@ public class PostsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(PostsActivity.this, WebActivity.class);
-                intent.putExtra("category",category);
-                intent.putExtra("post",position);
+                intent.putExtra("category", category);
+                intent.putExtra("post", position);
                 startActivity(intent);
             }
         });

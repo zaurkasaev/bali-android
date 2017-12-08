@@ -47,7 +47,6 @@ dependencies {
     compile 'com.android.support:percent:26.1.0'
     compile 'com.meetic.marypopup:marypopup:1.0.0'
     compile 'com.meetic.dragueur:dragueur:1.0.3'
-
     compile "com.google.guava:guava:16+"
 
 }
